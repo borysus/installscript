@@ -12,41 +12,41 @@ select opt in "${possibility[@]}"
 do
     case $opt in
         "Add Chaotic-AUR Repository")
-            func-chaotic-aur
+            func-chaotic-aur()
             break
             ;;
         "Install my program pack")
-            func-install-programs
+            func-install-programs()
             break
             ;;
         "Install Spicetify for Flatpak Spotify")
-            func-install-spicetify
+            func-install-spicetify()
             break
             ;;
         "Change deafult shell to fish")
-            func-change-shell-to-fish
+            func-change-shell-to-fish()
             break
             ;;
         "Set deafult power button behaviour to shutdown")
-            func-set-power-button-behaviour
+            func-set-power-button-behaviour()
             break
             ;;
         "Install a DE")
-            func-install-de
+            func-install-de()
             break
             ;;
         "Set GDM")
-            func-set-gdm
+            func-set-gdm()
             break
             ;;
         "All")
-            func-chaotic-aur
-            func-install-programs
-            func-install-spicetify
-            func-change-shell-to-fish
-            func-set-power-button-behaviour
-            func-install-de
-            func-set-gdm
+            func-chaotic-aur()
+            func-install-programs()
+            func-install-spicetify()
+            func-change-shell-to-fish()
+            func-set-power-button-behaviour()
+            func-install-de()
+            func-set-gdm()
             break
             ;;
         "Quit")
