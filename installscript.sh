@@ -12,7 +12,7 @@ select opt in "${possibility[@]}"
 do
     case $opt in
         "Add Chaotic-AUR Repository")
-            func-chaotic-aur() 
+            func-chaotic-aur()
             break
             ;;
         "Install my program pack")
