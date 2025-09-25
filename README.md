@@ -12,3 +12,6 @@ If you already have it downloaded you run it like that:
 ```
 ./installscript
 ```
+
+# Credits
+(insert credits here or smh)
