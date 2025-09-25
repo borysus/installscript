@@ -15,3 +15,5 @@ If you already have it downloaded you run it like that:
 
 # Credits
 (insert credits here or smh)
+
+# PLEASE NOTE THAT THIS SCRIPT IS EXPERIMENTAL AND VERY UNSTABLE!!!
