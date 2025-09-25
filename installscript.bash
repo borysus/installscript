@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo 'installscript by borysus'
 
@@ -12,41 +12,41 @@ select opt in "${possibility[@]}"
 do
     case $opt in
         "Add Chaotic-AUR Repository")
-            func-chaotic-aur()
+            func-chaotic-aur
             break
             ;;
         "Install my program pack")
-            func-install-programs()
+            func-install-programs
             break
             ;;
         "Install Spicetify for Flatpak Spotify")
-            func-install-spicetify()
+            func-install-spicetify
             break
             ;;
         "Change deafult shell to fish")
-            func-change-shell-to-fish()
+            func-change-shell-to-fish
             break
             ;;
         "Set deafult power button behaviour to shutdown")
-            func-set-power-button-behaviour()
+            func-set-power-button-behaviour
             break
             ;;
         "Install a DE")
-            func-install-de()
+            func-install-de
             break
             ;;
         "Set GDM")
-            func-set-gdm()
+            func-set-gdm
             break
             ;;
         "All")
-            func-chaotic-aur()
-            func-install-programs()
-            func-install-spicetify()
-            func-change-shell-to-fish()
-            func-set-power-button-behaviour()
-            func-install-de()
-            func-set-gdm()
+            func-chaotic-aur
+            func-install-programs
+            func-install-spicetify
+            func-change-shell-to-fish
+            func-set-power-button-behaviour
+            func-install-de
+            func-set-gdm
             break
             ;;
         "Quit")
@@ -55,7 +55,7 @@ do
         *) echo "Invalid option $REPLY";;
     esac
 done
-clear
+echo 'clear'
 
 func-chaotic-aur(){
 echo 'Adding the Chaotic AUR repository...'
@@ -67,7 +67,7 @@ sudo pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-ke
 sudo pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
 echo -e "\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist" | sudo tee -a /etc/pacman.conf
 sudo pacman -Syu --noconfirm
-clear
+echo 'clear'
 }
 
 func-install-programs(){
@@ -75,7 +75,7 @@ echo 'Installing the needed programs...'
 sleep 1
 sudo pacman -S --noconfirm --needed nano paru fastfetch fish bspwm gdm flatpak yay proton-vpn-gtk-app steam prismlauncher firefox ttf-ubuntu-font-family ttf-ubuntu-mono-nerd ttf-ubuntu-nerd zen-browser-bin code
 flatpak install -y flathub com.spotify.Client org.vinegarhq.Sober
-clear
+echo 'clear'
 }
 
 func-install-spicetify(){
@@ -89,7 +89,7 @@ spicetify config spotify_path /var/lib/flatpak/app/com.spotify.Client/x86_64/sta
 sudo chmod a+wr /var/lib/flatpak/app/com.spotify.Client/x86_64/stable/active/files/extra/share/spotify
 sudo chmod a+wr -R /var/lib/flatpak/app/com.spotify.Client/x86_64/stable/active/files/extra/share/spotify/Apps
 spicetify backup apply
-clear
+echo 'clear'
 }
 
 func-change-shell-to-fish(){
@@ -98,14 +98,14 @@ sleep 1
 sudo chsh -s /usr/bin/fish
 chsh -s /usr/bin/fish
 echo -e "function fish_greeting\n    fastfetch\n    echo The time is (set_color yellow)(date +%T)(set_color normal)\nend" >> ~/.config/fish/config.fish
-clear
+echo 'clear'
 }
 
 func-set-power-button-behaviour(){
 echo 'Setting deafult power button behaviour...'
 sleep 1
 echo 'HandlePowerKey=poweroff' | sudo tee -a /etc/systemd/logind.conf
-clear
+echo 'clear'
 }
 
 func-install-de(){
@@ -151,7 +151,7 @@ do
         *) echo "Invalid option $REPLY";;
     esac
 done
-clear
+echo 'clear'
 }
 
 func-set-gdm(){
@@ -161,7 +161,7 @@ yay -S --needed gdm
 sudo systemctl disable sddm
 sudo systemctl stop sddm
 sudo systemctl enable gdm
-clear
+echo 'clear'
 }
 
 echo 'Done! Thanks for using my script!'
