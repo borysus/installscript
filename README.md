@@ -8,7 +8,7 @@ cd installscript
 chmod +x installscript.sh
 ./installscript
 ```
-If you already have it downloaded you run it like that:
+If you already have it downloaded, run it like that:
 ```
 ./installscript
 ```
@@ -17,3 +17,7 @@ If you already have it downloaded you run it like that:
 (insert credits here or smh)
 
 # Please note that the script is still a WIP, so i wouldn't recommend running it on a PC
+
+To do:
+- add credits,
+- add my DE-specific config files
